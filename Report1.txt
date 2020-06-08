@@ -1,0 +1,13 @@
+Hi Xueyan,
+I hope you are doing well. I'm writing this email to report my research progress. 
+
+What I have done this week
+1. I worked on Task 1 and Task 2, and have completed the basic work of them.
+After briefly reading through the CSV files in the shared "results" folder, I came up with and implemented a preliminary idea to aggregate the scores of all the sentences in each document. Basically, I'm counting a weighted sum of different scores for each document, where the weights are hyper-parameters and are potentially possible to be trained if we know the labels  (i.e., whether the doc got fund) of the documents. 
+There are 4 kinds of scores and they are used for different documents.
+Weight	ScoreType										Documents0.1		standard deviation									grammar_errors.csv;  sentences_scored.csv;  word_sentence_score.csv0.2		mean											grammar_errors.csv;  sentences_scored.csv;  word_sentence_score.csv0.3		Percentage of sentences with grammar errors			grammar_errors.csv0.4		Percentage of sentences with at least 3 grammar errors	grammar_errors.csv
+The code is written in Python and is attached below. By executing the command line "python doc_eval.py", the attached CSV file named "results.csv" will be generated. This CSV file records the information required in Task 2.
+What I'm going to do next 
+In the following week, I will first fine-tune the hyper-parameters in the code to best order about 10 documents. I'll also explore better methods of aggregation. 
+Thank you for taking the time to read my report. Please let me know if you have any questions or suggestions. 
+Best,Jing
